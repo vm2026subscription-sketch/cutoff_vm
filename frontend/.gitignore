@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.output/
+.vinxi/
+.wrangler/
+.lovable/
+.env
+routeTree.gen.ts
+*.log
+.DS_Store

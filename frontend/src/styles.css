@@ -1,0 +1,152 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * CutoffSaathi design system — navy + saffron Indian ed-tech identity.
+ * All colors are semantic tokens. Never hardcode hex in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --font-sans: "Inter", "Helvetica Neue", system-ui, -apple-system, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand palette */
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy-mid: var(--navy-mid);
+  --color-saffron: var(--saffron);
+  --color-saffron-light: var(--saffron-light);
+  --color-saffron-dark: var(--saffron-dark);
+  --color-paper: var(--paper);
+  --color-paper-alt: var(--paper-alt);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-muted-ink: var(--muted-ink);
+  --color-success: var(--success);
+  --color-success-light: var(--success-light);
+  --color-danger: var(--danger);
+  --color-warning: var(--warning);
+  --color-warning-light: var(--warning-light);
+
+  --shadow-soft: 0 1px 2px oklch(0.2 0.04 260 / 0.04), 0 8px 24px oklch(0.2 0.04 260 / 0.06);
+  --shadow-lift: 0 2px 4px oklch(0.2 0.04 260 / 0.05), 0 16px 40px oklch(0.2 0.04 260 / 0.1);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* #142850 */
+  --navy: oklch(0.29 0.077 262.5);
+  /* #0B1B33 */
+  --navy-deep: oklch(0.22 0.058 263);
+  /* #1B3A63 */
+  --navy-mid: oklch(0.36 0.079 259);
+  /* #E8952B */
+  --saffron: oklch(0.75 0.148 66);
+  /* #FBEBD3 */
+  --saffron-light: oklch(0.94 0.032 76);
+  /* #B96E10 */
+  --saffron-dark: oklch(0.59 0.129 62);
+  /* #FBF9F4 */
+  --paper: oklch(0.985 0.006 95);
+  /* #F3EEE0 */
+  --paper-alt: oklch(0.95 0.017 92);
+  /* #E4DFD1 */
+  --line: oklch(0.9 0.016 92);
+  /* #1A1F2B */
+  --ink: oklch(0.24 0.017 265);
+  /* #6B7280 */
+  --muted-ink: oklch(0.55 0.023 265);
+  /* #2F7A4F */
+  --success: oklch(0.51 0.098 156);
+  /* #E9F5EE */
+  --success-light: oklch(0.96 0.019 156);
+  /* #C24A3D */
+  --danger: oklch(0.55 0.147 27);
+  --warning: oklch(0.72 0.145 75);
+  --warning-light: oklch(0.95 0.05 88);
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--ink);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--ink);
+  --primary: var(--saffron);
+  --primary-foreground: var(--navy);
+  --secondary: var(--paper-alt);
+  --secondary-foreground: var(--navy);
+  --muted: var(--paper-alt);
+  --muted-foreground: var(--muted-ink);
+  --accent: var(--saffron-light);
+  --accent-foreground: var(--saffron-dark);
+  --destructive: var(--danger);
+  --destructive-foreground: oklch(1 0 0);
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--navy);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--color-navy);
+  }
+}
+
+@utility container-page {
+  width: 100%;
+  max-width: 1160px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
